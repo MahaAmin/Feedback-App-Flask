@@ -3,7 +3,7 @@
 
 ## How To Use
 
-- **Create virtual environment:**
+- **Create virtual environment: (Only once at first setup)**
     ```
     $ make setup
     ```
@@ -24,3 +24,9 @@
     ```
     $ flask run
     ```
+
+## Tools Used:
+
+- Python3
+- Flask
+- PostgreSQL
