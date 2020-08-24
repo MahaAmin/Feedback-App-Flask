@@ -30,3 +30,5 @@
 - Python3
 - Flask
 - PostgreSQL
+- Heroku
+- Mailtrap
