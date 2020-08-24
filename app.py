@@ -33,10 +33,6 @@ class Feedback(db.Model):
         self.comments = comments
 
 
-
-
-
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -50,11 +46,20 @@ def submit():
         rating = request.form['rating']
         comments = request.form['comments']
 
-        print(customer, dealer, rating, comments)
+        #print(customer, dealer, rating, comments)
         # check customer and dealer fields are not empty
         if customer == '' or dealer == '':
             return render_template('index.html', message='Please enter the required fields!')
-        return render_template('success.html')
+        
+        # enable customer to give feedback only once
+        if db.session.query(Feedback).filter(Feedback.customer == customer).count() == 0:
+            data = Feedback(customer, dealer,rating,comments)
+            db.session.add(data)
+            db.session.commit()
+            return render_template('success.html')
+        return render_template('index.html', message='You have already submitted feedback!')
+
+
 
 
 if __name__ == '__main__':
