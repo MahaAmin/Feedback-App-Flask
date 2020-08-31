@@ -4,9 +4,9 @@ from send_mail import send_email
 
 app = Flask(__name__)
 
-ENV = 'dev'
+ENV = 'prod'
 
-if ENV == 'prod':
+if ENV == 'dev':
     # dev env
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1234@localhost/lexus'

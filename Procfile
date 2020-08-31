@@ -1,1 +1,1 @@
-web: make install
+web: flask run
