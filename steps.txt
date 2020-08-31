@@ -1,0 +1,5 @@
+1- Install jenkins server on aws ec2:
+    1.1- create ubuntu 18.04 lts ec2
+    1.2- install default-jdk
+    1.3- install jenkins
+    1.4- install "Blue Ocean Aggregator" plugin in jenkins

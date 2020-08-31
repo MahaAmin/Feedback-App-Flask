@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-from send_mail import send_email 
+from send_mail import send_email
 
 app = Flask(__name__)
 
-ENV = 'prod'
+ENV = 'dev'
 
 if ENV == 'dev':
     # dev env
@@ -36,6 +36,9 @@ class Feedback(db.Model):
 
 @app.route('/')
 def index():
+    """
+    root path, renders lexus home page
+    """
     return render_template('index.html')
 
 
